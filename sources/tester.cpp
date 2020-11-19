@@ -51,7 +51,8 @@ double Tester::direct(int array_size) {
     }
     auto finish = std::chrono::high_resolution_clock::now();
     elapsed_seconds +=
-        std::chrono::duration_cast<std::chrono::microseconds>(finish - start).count();
+        std::chrono::duration_cast
+            <std::chrono::microseconds>(finish - start).count();
   }
   free_array(array);
   tmp = 0;
@@ -79,7 +80,8 @@ double Tester::reverse(int array_size) {
     }
     auto finish = std::chrono::high_resolution_clock::now();
     elapsed_seconds =
-        std::chrono::duration_cast<std::chrono::microseconds>(finish - start).count();
+        std::chrono::duration_cast
+            <std::chrono::microseconds>(finish - start).count();
   }
   free_array(array);
   tmp = 0;
@@ -107,7 +109,8 @@ double Tester::randomn(int array_size) {
     }
     auto finish = std::chrono::high_resolution_clock::now();
     elapsed_seconds +=
-        std::chrono::duration_cast<std::chrono::microseconds>(finish - start).count();
+        std::chrono::duration_cast
+            <std::chrono::microseconds>(finish - start).count();
   }
   free_array(array);
   tmp = 0;
@@ -130,7 +133,7 @@ void Tester::experiment(std::ostream& out) {
 //reverse
   out << std::endl << std::endl << "travel variant: reverse" <<\
  std::endl << "experiments: " << std::endl;
-  for (size_t i = 0;i < m_series.size(); ++i) {
+  for (size_t i = 0; i < m_series.size(); ++i) {
     out << "    number: " << i + 1 << std::endl
         << "    input data:" << std::endl
         << "      buffer_size: " << m_series[i] / 256 << " KiB" << std::endl
@@ -139,7 +142,7 @@ void Tester::experiment(std::ostream& out) {
   //random
   out << std::endl << std::endl << "travel variant: random" <<\
  std::endl << "experiments: " << std::endl;
-  for (size_t i = 0;i < m_series.size(); ++i){
+  for (size_t i = 0; i < m_series.size(); ++i){
     out << "    number: " << i + 1 << std::endl <<\
            "    input data:" << std::endl <<\
            "      buffer_size: " << m_series[i] / 256 << " KiB" <<\
