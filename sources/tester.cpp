@@ -20,7 +20,7 @@ void Tester::free_array(int* array){
   delete[] array;
 }
 
-int Tester::random_16(int zero, int array_size) {
+int Tester::random_16(int zero, int array_size ) {
   int a = zero + random() % (array_size - zero + 1);
   if (a/16 == 0){
     return a;
@@ -105,7 +105,7 @@ double Tester::randomn(int array_size) {
   for (int i = 0; i < iter; ++i) {
     auto start = std::chrono::high_resolution_clock::now();
     for (int j = 0; j < array_size; j += step) {
-      tmp = array[random_16(0, array_size)];
+      tmp = array[random_16(0, array_size - 1)];
     }
     auto finish = std::chrono::high_resolution_clock::now();
     elapsed_seconds +=
