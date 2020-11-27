@@ -3,10 +3,22 @@
 #include <tester.hpp>
 #include <iostream>
 
-Tester::Tester(std::vector<int> series):
-    m_series(series), L1_size(96*1024 / sizeof(int)), tmp(0), count(0)
+Tester::Tester(int L1, int L2):
+    Lmin(L1), Lmax(L2), L1_size(96*1024 / sizeof(int)), tmp(0), count(0)
 {
 }
+
+std::vector<int> Tester::define_series(int L1, int L2) {
+  double start = L1 * 0.5*1024/sizeof(int);
+  double end = L2 * 1.5*1024/sizeof(int);
+  while (start < end){
+    series.push_back(start);
+    start = start*2;
+  }
+  series.push_back(end);
+  return series;
+}
+
 
 int* Tester::get_random_array(int size) {
   int* array = new int [size];
@@ -122,33 +134,33 @@ void Tester::experiment(std::ostream& out) {
   //direct
   out << "Investigation:" << std::endl << "travel variant: direct" <<\
  std::endl << "experiments: " << std::endl;
-  for (size_t i = 0; i < m_series.size(); ++i){
+  for (size_t i = 0; i < series.size(); ++i){
     out << "    number: " << i + 1 << std::endl <<\
            "    input data:" << std::endl <<\
-           "      buffer_size: " << m_series[i] / 256 << " KiB" <<\
+           "      buffer_size: " << series[i] / 256 << " KiB" <<\
                                                            std::endl <<\
            "    results:" << std::endl <<\
-           "      duration: " << direct(m_series[i]) <<\
+           "      duration: " << direct(series[i]) <<\
            " mcs" << std::endl; }
 //reverse
   out << std::endl << std::endl << "travel variant: reverse" <<\
  std::endl << "experiments: " << std::endl;
-  for (size_t i = 0; i < m_series.size(); ++i) {
+  for (size_t i = 0; i < series.size(); ++i) {
     out << "    number: " << i + 1 << std::endl
         << "    input data:" << std::endl
-        << "      buffer_size: " << m_series[i] / 256 << " KiB" << std::endl
+        << "      buffer_size: " << series[i] / 256 << " KiB" << std::endl
         << "    results:" << std::endl
-        << "     duration: " << reverse(m_series[i]) << " mcs" << std::endl; }
+        << "     duration: " << reverse(series[i]) << " mcs" << std::endl; }
   //random
   out << std::endl << std::endl << "travel variant: random" <<\
  std::endl << "experiments: " << std::endl;
-  for (size_t i = 0; i < m_series.size(); ++i){
+  for (size_t i = 0; i < series.size(); ++i){
     out << "    number: " << i + 1 << std::endl <<\
            "    input data:" << std::endl <<\
-           "      buffer_size: " << m_series[i] / 256 << " KiB" <<\
+           "      buffer_size: " << series[i] / 256 << " KiB" <<\
                                                            std::endl <<\
            "    results:" << std::endl <<\
-           "      duration: " << randomn(m_series[i]) <<\
+           "      duration: " << randomn(series[i]) <<\
            " mcs" << std::endl; }
 }
 

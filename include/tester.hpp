@@ -11,7 +11,7 @@
 
 class Tester {
  public:
-  explicit Tester(std::vector<int> series);
+  explicit Tester(int L1, int L2);
   ~Tester();
   int* get_random_array(int size);
   int random_16(int zero, int array_size);
@@ -20,9 +20,12 @@ class Tester {
   double reverse(int array_size);
   double randomn(int array_size);
   void experiment(std::ostream& out = std::cout);
+  std::vector<int> define_series(int L1, int L2);
 
  private:
-  std::vector<int> m_series;
+  std::vector<int> series;
+  int Lmin;
+  int Lmax;
   const int iter = 1000;
   const int step = 16;
   int L1_size;
