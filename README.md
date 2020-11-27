@@ -132,29 +132,7 @@ cache_size['3'] = 8 mb;
 
 ### Результаты
 
-Ниже представлен формат и пример отчета:
-
-```yaml
-investigation:                                       |  investigaion:
-  travel_variant: <вариант_прохода>                  |    travel_order: "direction"
-  experiments:                                       |    experiments:
-  - experiment:                                      |    - experiment:
-      number:                                        |        number: 1
-      input_data:                                    |        input_data:
-        buffer_size: <размер_буфера>                 |          buffer_size: "1mb"
-      results:                                       |        results:
-        duration: <продолжительность>                |          duration: "1ns"
-  - experiment:                                      |    - experiment:
-      number: <номер_эксперимента>                   |        number: 2
-      input_data:                                    |        input_data:
-        buffer_size: <размер_буфера>                 |          buffer_size: "2mb"
-      results:                                       |        results:
-        duration: <продолжительность>                |          duration: "2ns"
-                                                     |
-investigation:                                       |  investigation:
-...                                                  |  ...
-```
-
+Отчет и график
 
 ```yaml
 Investigation:
@@ -336,4 +314,3 @@ experiments:
 ```
 ![Cache](./images/cache.png)
 
-⚠️ В отчет также необходимо добавить общий график с результатами всех исследований. ⚠️
