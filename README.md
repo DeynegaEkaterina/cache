@@ -155,4 +155,185 @@ investigation:                                       |  investigation:
 ...                                                  |  ...
 ```
 
+
+```yaml
+Investigation:
+travel variant: direct
+experiments: 
+    number: 1
+    input data:
+      buffer_size: 48 KiB
+    results:
+      duration: 4.435 mcs
+    number: 2
+    input data:
+      buffer_size: 96 KiB
+    results:
+      duration: 7.194 mcs
+    number: 3
+    input data:
+      buffer_size: 192 KiB
+    results:
+      duration: 15.194 mcs
+    number: 4
+    input data:
+      buffer_size: 384 KiB
+    results:
+      duration: 27.555 mcs
+    number: 5
+    input data:
+      buffer_size: 768 KiB
+    results:
+      duration: 37.92 mcs
+    number: 6
+    input data:
+      buffer_size: 1536 KiB
+    results:
+      duration: 98.418 mcs
+    number: 7
+    input data:
+      buffer_size: 3072 KiB
+    results:
+      duration: 244.738 mcs
+    number: 8
+    input data:
+      buffer_size: 6144 KiB
+    results:
+      duration: 405.919 mcs
+    number: 9
+    input data:
+      buffer_size: 12288 KiB
+    results:
+      duration: 856.638 mcs
+    number: 10
+    input data:
+      buffer_size: 24576 KiB
+    results:
+      duration: 1789.88 mcs
+    number: 11
+    input data:
+      buffer_size: 36864 KiB
+    results:
+      duration: 2762 mcs
+
+
+travel variant: reverse
+experiments: 
+    number: 1
+    input data:
+      buffer_size: 48 KiB
+    results:
+     duration: 0.002 mcs
+    number: 2
+    input data:
+      buffer_size: 96 KiB
+    results:
+     duration: 0.003 mcs
+    number: 3
+    input data:
+      buffer_size: 192 KiB
+    results:
+     duration: 0.007 mcs
+    number: 4
+    input data:
+      buffer_size: 384 KiB
+    results:
+     duration: 0.016 mcs
+    number: 5
+    input data:
+      buffer_size: 768 KiB
+    results:
+     duration: 0.043 mcs
+    number: 6
+    input data:
+      buffer_size: 1536 KiB
+    results:
+     duration: 0.056 mcs
+    number: 7
+    input data:
+      buffer_size: 3072 KiB
+    results:
+     duration: 0.447 mcs
+    number: 8
+    input data:
+      buffer_size: 6144 KiB
+    results:
+     duration: 0.393 mcs
+    number: 9
+    input data:
+      buffer_size: 12288 KiB
+    results:
+     duration: 0.857 mcs
+    number: 10
+    input data:
+      buffer_size: 24576 KiB
+    results:
+     duration: 1.819 mcs
+    number: 11
+    input data:
+      buffer_size: 36864 KiB
+    results:
+     duration: 4.065 mcs
+
+
+travel variant: random
+experiments: 
+    number: 1
+    input data:
+      buffer_size: 48 KiB
+    results:
+      duration: 20.836 mcs
+    number: 2
+    input data:
+      buffer_size: 96 KiB
+    results:
+      duration: 41.051 mcs
+    number: 3
+    input data:
+      buffer_size: 192 KiB
+    results:
+      duration: 82.315 mcs
+    number: 4
+    input data:
+      buffer_size: 384 KiB
+    results:
+      duration: 189.617 mcs
+    number: 5
+    input data:
+      buffer_size: 768 KiB
+    results:
+      duration: 399.466 mcs
+    number: 6
+    input data:
+      buffer_size: 1536 KiB
+    results:
+      duration: 532.211 mcs
+    number: 7
+    input data:
+      buffer_size: 3072 KiB
+    results:
+      duration: 1182.09 mcs
+    number: 8
+    input data:
+      buffer_size: 6144 KiB
+    results:
+      duration: 4017.24 mcs
+    number: 9
+    input data:
+      buffer_size: 12288 KiB
+    results:
+      duration: 12278 mcs
+    number: 10
+    input data:
+      buffer_size: 24576 KiB
+    results:
+      duration: 28155.1 mcs
+    number: 11
+    input data:
+      buffer_size: 36864 KiB
+    results:
+      duration: 44989.1 mcs
+```
+![Cache](./images/cache.png)
+
 ⚠️ В отчет также необходимо добавить общий график с результатами всех исследований. ⚠️
