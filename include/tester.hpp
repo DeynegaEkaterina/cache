@@ -20,7 +20,7 @@ class Tester {
   double reverse(int array_size);
   double randomn(int array_size);
   void experiment(std::ostream& out = std::cout);
-  std::vector<int> define_series(int L1, int L2);
+  std::vector<int> define_series();
 
  private:
   std::vector<int> series;

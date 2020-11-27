@@ -16,7 +16,7 @@ TEST(Ex, EmptyTest) {
   Cache cache;
 
   Tester tester(cache.L1, cache.L3);
-  tester.define_series(cache.L1, cache.L3);
+  tester.define_series();
   tester.experiment();
   EXPECT_TRUE(true);
 }

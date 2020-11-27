@@ -8,9 +8,9 @@ Tester::Tester(int L1, int L2):
 {
 }
 
-std::vector<int> Tester::define_series(int L1, int L2) {
-  double start = L1 * 0.5*1024/sizeof(int);
-  double end = L2 * 1.5*1024/sizeof(int);
+std::vector<int> Tester::define_series() {
+  double start = Lmin * 0.5*1024/sizeof(int);
+  double end = Lmax * 1.5*1024/sizeof(int);
   while (start < end){
     series.push_back(start);
     start = start*2;
