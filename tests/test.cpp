@@ -9,11 +9,15 @@ TEST(Example, EmptyTest) {
 }
 
 TEST(Ex, EmptyTest) {
-  int L1 = 96;
-  int L3 = 24576;
+  struct Cache{
+    int L1 = 96;
+    int L3 = 24576;
+  };
+  Cache cache;
   std::vector<int> series;
-  double start = L1 * 0.5*1024/sizeof(int);
-  double end = L3 * 1.5*1024/sizeof(int);
+  
+  double start = cache.L1 * 0.5*1024/sizeof(int);
+  double end = cache.L3 * 1.5*1024/sizeof(int);
   while (start < end){
     series.push_back(start);
     start = start*2;

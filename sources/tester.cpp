@@ -22,10 +22,10 @@ void Tester::free_array(int* array){
 
 int Tester::random_16(int zero, int array_size ) {
   int a = zero + random() % (array_size - zero + 1);
-  if (a/16 == 0){
+  if (a/step == 0){
     return a;
   } else{
-    int b = a%16;
+    int b = a%step;
     a = a - b;
   }
   return a;
